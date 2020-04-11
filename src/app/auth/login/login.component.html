@@ -1,1 +1,36 @@
-<p>login works!</p>
+<div class="simple-login-container">
+  <h2>Login Form</h2>
+  <form [formGroup]="loginForm" (submit)="userLogin()">
+    <div class="row">
+      <div class="col-md-12 form-group">
+        <input type="text" class="form-control" placeholder="Username" formControlName="email" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 form-group">
+        <input
+          type="password"
+          placeholder="Enter your Password"
+          class="form-control"
+          formControlName="password"
+        />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 form-group">
+        <input
+          type="submit"
+          class="btn btn-block btn-login"
+          placeholder="Enter your Password"
+        />
+      </div>
+    </div>
+  </form>
+  <div class="row">
+    <div class="col-md-12">
+      <a href="https://codeblush.com/category/wordpress"
+        >Download Best Wordpress Theme</a
+      >
+    </div>
+  </div>
+</div>

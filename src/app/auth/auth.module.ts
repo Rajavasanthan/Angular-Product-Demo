@@ -1,25 +1,36 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
-import { Routes, RouterModule } from '@angular/router';
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { LoginComponent } from "./login/login.component";
+import { RegisterComponent } from "./register/register.component";
+import { Routes, RouterModule } from "@angular/router";
+import { ReactiveFormsModule, FormsModule } from "@angular/forms";
+import { ToastrModule, ToastrService } from "ngx-toastr";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
-const router:Routes = [
+const router: Routes = [
   {
-    path : 'login',
-    component : LoginComponent
+    path: "login",
+    component: LoginComponent,
   },
   {
-    path : 'register',
-    component : RegisterComponent
-  }
-]
+    path: "register",
+    component: RegisterComponent,
+  },
+];
 
 @NgModule({
   declarations: [LoginComponent, RegisterComponent],
   imports: [
     CommonModule,
-    RouterModule.forChild(router)
-  ]
+    RouterModule.forChild(router),
+    ReactiveFormsModule,
+    FormsModule,
+    ToastrModule.forRoot(
+      {
+        positionClass: 'toast-top-right'
+      }
+    ),
+  ],
+  providers : [ToastrService]
 })
-export class AuthModule { }
+export class AuthModule {}
