@@ -12,4 +12,8 @@ export class AdminProductCreateComponent implements OnInit {
   ngOnInit() {
   }
 
+  logout(){
+    window.localStorage.removeItem('blog_key');
+  }
+
 }

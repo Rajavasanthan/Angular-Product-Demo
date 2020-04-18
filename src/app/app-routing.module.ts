@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { LandingComponent } from './landing/landing.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductComponent } from './product/product.component';
+import { AuthGuard } from './auth.guard';
 
 
 const routes: Routes = [
@@ -24,7 +25,8 @@ const routes: Routes = [
   },
   {
     path : 'admin',
-    loadChildren : () => import('./admin/admin.module').then(m => m.AdminModule)
+    loadChildren : () => import('./admin/admin.module').then(m => m.AdminModule),
+    canActivate : [AuthGuard]
   }
 ];
 

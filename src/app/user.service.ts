@@ -8,10 +8,10 @@ export class UserService {
   constructor(private http: HttpClient) {}
 
   registerUser(userData): Observable<any> {
-    return this.http.post("http://localhost:3000/register", userData);
+    return this.http.post("http://localhost:3001/register", userData);
   }
 
   loginUser(loginData): Observable<any> {
-    return this.http.post("http://localhost:3000/login", loginData);
+    return this.http.post("http://localhost:3001/login", loginData);
   }
 }
