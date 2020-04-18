@@ -7,7 +7,7 @@ import { ProductService } from "../product.service";
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent implements OnInit {
-  productDetails={};
+  productDetails:any={};
   constructor(private activateRoute:ActivatedRoute,private productService:ProductService) { }
 
   ngOnInit() {
